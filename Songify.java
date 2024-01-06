@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.Iterator;
 
 public class Songify {
 
@@ -89,7 +90,28 @@ public class Songify {
             }
         }
     }
-    // Brief: Remove a song from the list of songs
+    // Brief: delete a song from the list of songs
+    public void deleteSong() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("What is the title of the song you would like to delete?");
+        String deleteSongTitle = scanner.nextLine();
+
+        System.out.println("What is the artist's name?");
+        String deleteArtistName = scanner.nextLine();
+
+        Iterator<SongData> iterator = playlistSongs.iterator();
+        
+        while(iterator.hasNext()) {
+            SongData songDataPosition = iterator.next();
+
+            if (songDataPosition.getsongTitle().equals(deleteSongTitle) && songDataPosition.getartistName().equals(deleteArtistName)) {
+                iterator.remove();
+                System.out.println(deleteSongTitle + "by " + deleteArtistName + "has been deleted from the playlist!");
+            }
+
+        }
+    }
     
 
 }
