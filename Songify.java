@@ -57,7 +57,7 @@ public class Songify {
     public void filterStreamCount(Scanner scanner) {
         System.out.println("What is the lowest stream count that you would like to appear on the playlist?");
         int streamCountUserInput = scanner.nextInt();
-        scanner.nextLine();
+        scanner.nextInt();
 
         System.out.println("Your playlist only includes songs with a higher stream count than " + streamCountUserInput + ":");
 
@@ -70,7 +70,25 @@ public class Songify {
             }
         }
     }
+
     // Added Feature: Print a list of songs based on genre
+    public void filterGenre(Scanner scanner) {
+        System.out.println("What genre of songs would you like in your playlist?");
+        String genreUserInput = scanner.nextLine();
+        scanner.nextLine();
+
+        System.out.println("Your playlist now includes song that belong to the " + genreUserInput + " genre:");
+
+        for(SongData filterGenre : playlistSongs) {
+            if (genreUserInput == filterGenre.getgenre()){
+                System.out.println("Song Title " + filterGenre.getsongTitle() + " Artist Name " + filterGenre.getartistName() +
+                " Stream Count: " + filterGenre.getstreamCount() + " Genre: " + filterGenre.getgenre());    
+            } else {
+                System.out.println("There are no " + genreUserInput + " songs in your playlist ");
+                System.out.println("Press X to add new songs that belong to the " + genreUserInput + " genre!");
+            }
+        }
+    }
     // Brief: Remove a song from the list of songs
     
 
