@@ -1,4 +1,4 @@
-public class SongifyData {
+public class SongData {
 
     //private variables to improve code quality
     private String songTitle;
@@ -7,7 +7,7 @@ public class SongifyData {
     private String genre;
 
     //constructor
-    public SongifyData(String songTitle, String artistName, int streamCount, String genre) {
+    public SongData(String songTitle, String artistName, int streamCount, String genre) {
         this.songTitle = songTitle;
         this.artistName = artistName;
         this.streamCount = streamCount;

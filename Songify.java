@@ -3,22 +3,22 @@ import java.util.Scanner;
 
 public class Songify {
 
-    private ArrayList<SongifyData> songifyDatas = new ArrayList<SongifyData>();
+    private ArrayList<SongData> songifyDatas = new ArrayList<SongData>();
     
     public Songify() {
 
-        songifyDatas.add(new SongifyData("Shippuden", "Blanco", 44000000, "Rap"));
-        songifyDatas.add(new SongifyData("Outside", "D-Block Europe", 267000000 , "Rap"));
-        songifyDatas.add(new SongifyData("Alone With You", "Arz", 177000000, "Rap"));
-        songifyDatas.add(new SongifyData("Savage Anthem", "PARTYNEXTDOOR", 150000000 , "R&B"));
-        songifyDatas.add(new SongifyData("Who Hurt You?", "Daniel Caesar", 762000000, "R&B"));
-        songifyDatas.add(new SongifyData("No Guidance", "Chris Brown", 468000000, "R&B"));
-        songifyDatas.add(new SongifyData("On The Low", "Burna Boy", 365000000, "Afrobeats"));
-        songifyDatas.add(new SongifyData("Soundgasm", "Rema", 670000000 , "Afrobeats"));
-        songifyDatas.add(new SongifyData("Soso", "Omah Lay", 123000000, "Afrobeats"));
-        songifyDatas.add(new SongifyData("Umbrella", "Rihanna", 988000000, "Hip-Hop"));
-        songifyDatas.add(new SongifyData("Only", "Nicki Minaj", 535000000, "Hip-Hop"));
-        songifyDatas.add(new SongifyData("Thang For You", "Rylo Rodrigeuz", 60000000 , "Hip-Hop"));
+        songifyDatas.add(new SongData("Shippuden", "Blanco", 44000000, "Rap"));
+        songifyDatas.add(new SongData("Outside", "D-Block Europe", 267000000 , "Rap"));
+        songifyDatas.add(new SongData("Alone With You", "Arz", 177000000, "Rap"));
+        songifyDatas.add(new SongData("Savage Anthem", "PARTYNEXTDOOR", 150000000 , "R&B"));
+        songifyDatas.add(new SongData("Who Hurt You?", "Daniel Caesar", 762000000, "R&B"));
+        songifyDatas.add(new SongData("No Guidance", "Chris Brown", 468000000, "R&B"));
+        songifyDatas.add(new SongData("On The Low", "Burna Boy", 365000000, "Afrobeats"));
+        songifyDatas.add(new SongData("Soundgasm", "Rema", 670000000 , "Afrobeats"));
+        songifyDatas.add(new SongData("Soso", "Omah Lay", 123000000, "Afrobeats"));
+        songifyDatas.add(new SongData("Umbrella", "Rihanna", 988000000, "Hip-Hop"));
+        songifyDatas.add(new SongData("Only", "Nicki Minaj", 535000000, "Hip-Hop"));
+        songifyDatas.add(new SongData("Thang For You", "Rylo Rodrigeuz", 60000000 , "Hip-Hop"));
        
     }
 
@@ -38,9 +38,9 @@ public class Songify {
         System.out.println("What genre does this song belong to?");
         String genre = scanner.nextLine();
 
-        songifyDatas.add(new SongifyData(songTitle, artistName, streamCount, genre));
+        songifyDatas.add(new SongData(songTitle, artistName, streamCount, genre));
     }
-    
+
     // Brief: Remove a song from the list of songs
     // Brief: Print a list of all the songs stored
     // Brief: Print a list of songs over a given number of plays 
