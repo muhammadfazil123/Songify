@@ -1,8 +1,9 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Songify {
 
-    public ArrayList<SongifyData> songifyDatas = new ArrayList<SongifyData>();
+    private ArrayList<SongifyData> songifyDatas = new ArrayList<SongifyData>();
     
     public Songify() {
 
@@ -20,4 +21,29 @@ public class Songify {
         songifyDatas.add(new SongifyData("Thang For You", "Rylo Rodrigeuz", 60000000 , "Hip-Hop"));
        
     }
+
+    // Brief: Add a new song to the list of songs
+    public void addNewSongData() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("What is the title of the song you would like to add?");
+        String songTitle = scanner.nextLine();
+
+        System.out.println("What is the artist's name?");
+        String artistName = scanner.nextLine();
+
+        System.out.println("What is the stream count of this song?");
+        int streamCount = scanner.nextInt();
+
+        System.out.println("What genre does this song belong to?");
+        String genre = scanner.nextLine();
+
+        songifyDatas.add(new SongifyData(songTitle, artistName, streamCount, genre));
+    }
+    
+    // Brief: Remove a song from the list of songs
+    // Brief: Print a list of all the songs stored
+    // Brief: Print a list of songs over a given number of plays 
+    // Added Feature: Print a list of songs based on genre
+
 }
