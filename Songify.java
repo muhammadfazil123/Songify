@@ -53,8 +53,25 @@ public class Songify {
         }
     }
 
-    // Brief: Remove a song from the list of songs
     // Brief: Print a list of songs over a given number of plays 
+    public void filterStreamCount(Scanner scanner) {
+        System.out.println("What is the lowest stream count that you would like to appear on the playlist?");
+        int streamCountUserInput = scanner.nextInt();
+        scanner.nextLine();
+
+        System.out.println("Your playlist only includes songs with a higher stream count than " + streamCountUserInput + ":");
+
+        for (SongData filterStreamCount : playlistSongs) {
+            if (streamCountUserInput <= filterStreamCount.getstreamCount()) {
+                System.out.println("Song Title " + filterStreamCount.getsongTitle() + " Artist Name " + filterStreamCount.getartistName() +
+                " Stream Count: " + filterStreamCount.getstreamCount() + " Genre: " + filterStreamCount.getgenre()); 
+            } else {
+                System.out.println("There are no songs in your playlist that have a higher stream count than " + streamCountUserInput);
+            }
+        }
+    }
     // Added Feature: Print a list of songs based on genre
+    // Brief: Remove a song from the list of songs
+    
 
 }
