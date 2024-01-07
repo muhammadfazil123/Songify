@@ -86,7 +86,7 @@ public class Songify {
         }
     }   
 
-    // creating a method to print a list of songs over a given number of plays 
+    // creating a method to print a list of songs from the list of SongData objects in the ArrayList over a given number of plays 
     public void filterStreamCount(Scanner scanner) {
         
         System.out.println("You have chosen to filter the Songify playlist to only include songs over a given number of streams");
@@ -108,7 +108,7 @@ public class Songify {
     }
 
     /* Adding an extra feature by creating a method that allows the user to
-    filter the list of songs in the ArrayList based on the genre they input */
+    filter the list of SongData objects in the ArrayList based on the genre they input */
     public void filterGenre() {
         Scanner scanner = new Scanner(System.in); // creating a Scanner object
 
