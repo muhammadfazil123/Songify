@@ -38,7 +38,7 @@ public class SongifyMenu {
     // creating a songify terminal menu to print statemnets that will instruct the user
     public static void songifyTerminalMenu() {
 
-        System.out.println("                Songify Menu:"); // space added to have visual effect when executed
+        System.out.println("\n                Songify Menu:"); // space added to have visual effect when executed
         System.out.println("Click 1 - to access the current Songify playlist");
         System.out.println("Click 2 - to add a new song to the Songify playlist");
         System.out.println("Click 3 - to remove an existing song from the playlist");
