@@ -87,20 +87,6 @@ public class Songify {
         }
     }
 
-    public void filterArtistName(Scanner scanner) {
-        System.out.println("What Artist would you like to specfically search?");
-        String artistNameUserInput = scanner.nextLine();
-
-        System.out.println("Your playlist now only shows songs that belong to " + artistNameUserInput + " :");
-        for(SongData filterArtistName : playlistSongs) {
-            if (artistNameUserInput.equals(filterArtistName.getgenre())) {
-                System.out.println("Song Title " + filterArtistName.getsongTitle() + " Artist Name " + filterArtistName.getartistName() +
-                " Stream Count: " + filterArtistName.getstreamCount() + " Genre: " + filterArtistName.getgenre());   
-            } 
-        }
-
-    }
-
     // Brief: delete a song from the list of songs
     public void deleteSong() {
         Scanner scanner = new Scanner(System.in);
@@ -110,7 +96,6 @@ public class Songify {
 
         System.out.println("What is the artist's name?");
         String deleteArtistName = scanner.nextLine();
-        scanner.close();
 
         Iterator<SongData> iterator = playlistSongs.iterator();
         

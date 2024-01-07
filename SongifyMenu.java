@@ -5,10 +5,9 @@ public class SongifyMenu {
     final static int PRINT_PLAYLIST = 1;
     final static int ADD_NEW_SONG = 2;
     final static int DELETE_SONG = 3;
-    final static int FILTER_STREAM_COUNT = 4;
-    final static int FILTER_GENRE = 5;
-    final static int FILTER_ARTIST_NAME = 6;
-    final static int CLOSE_APPLICATION = 7;
+    final static int FILTER_BY_STREAM_COUNT = 4;
+    final static int FILTER_BY_GENRE = 5;
+    final static int CLOSE_APPLICATION = 9;
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -38,8 +37,7 @@ public class SongifyMenu {
         System.out.println("Click 3 - to remove an existing song from the playlist");
         System.out.println("Click 4 - to filter the playlist based on the streamcount of songs");
         System.out.println("Click 5 - to filter the playlist to only show a specific genre");
-        System.out.println("Click 6 - to filter the playlist to only show a single artist's songs");
-        System.out.println("Click 7 - to close the Songify application");
+        System.out.println("Click 9 - to close the Songify application");
     }
 
     public static void userInputMenuChoice(int userChoice, Songify useSongifyMethods, Scanner scanner) {
@@ -58,16 +56,12 @@ public class SongifyMenu {
             useSongifyMethods.deleteSong();
             break;
 
-            case FILTER_STREAM_COUNT:
+            case FILTER_BY_STREAM_COUNT:
             useSongifyMethods.filterStreamCount(scanner);
             break;
 
-            case FILTER_GENRE:
+            case FILTER_BY_GENRE:
             useSongifyMethods.filterGenre();
-            break;
-
-            case FILTER_ARTIST_NAME:
-            useSongifyMethods.filterArtistName(scanner);
             break;
 
             case CLOSE_APPLICATION:
