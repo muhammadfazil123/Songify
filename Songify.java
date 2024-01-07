@@ -11,15 +11,15 @@ public class Songify {
         playlistSongs.add(new SongData("Shippuden", "Blanco", 44000000, "Rap"));
         playlistSongs.add(new SongData("Outside", "D-Block Europe", 267000000 , "Rap"));
         playlistSongs.add(new SongData("Alone With You", "Arz", 177000000, "Rap"));
-        playlistSongs.add(new SongData("Savage Anthem", "PARTYNEXTDOOR", 150000000 , "R&B"));
-        playlistSongs.add(new SongData("Who Hurt You?", "Daniel Caesar", 762000000, "R&B"));
-        playlistSongs.add(new SongData("No Guidance", "Chris Brown", 468000000, "R&B"));
+        playlistSongs.add(new SongData("Savage Anthem", "PARTYNEXTDOOR", 150000000 , "RNB"));
+        playlistSongs.add(new SongData("Who Hurt You?", "Daniel Caesar", 762000000, "RNB"));
+        playlistSongs.add(new SongData("No Guidance", "Chris Brown", 468000000, "RNB"));
         playlistSongs.add(new SongData("On The Low", "Burna Boy", 365000000, "Afrobeats"));
         playlistSongs.add(new SongData("Soundgasm", "Rema", 670000000 , "Afrobeats"));
         playlistSongs.add(new SongData("Soso", "Omah Lay", 123000000, "Afrobeats"));
-        playlistSongs.add(new SongData("Umbrella", "Rihanna", 988000000, "Hip-Hop"));
-        playlistSongs.add(new SongData("Only", "Nicki Minaj", 535000000, "Hip-Hop"));
-        playlistSongs.add(new SongData("Thang For You", "Rylo Rodrigeuz", 60000000 , "Hip-Hop"));
+        playlistSongs.add(new SongData("Umbrella", "Rihanna", 988000000, "Hip Hop"));
+        playlistSongs.add(new SongData("Only", "Nicki Minaj", 535000000, "Hip Hop"));
+        playlistSongs.add(new SongData("Thang For You", "Rylo Rodrigeuz", 60000000 , "Hip Hop"));
     }
 
     // Brief: Add a new song to the list of songs
@@ -67,7 +67,6 @@ public class Songify {
                 " Stream Count: " + filterStreamCount.getstreamCount() + " Genre: " + filterStreamCount.getgenre()); 
             } 
         }
-        System.out.println("Wrong genre");
     }
 
     // Added Feature: Print a list of songs based on genre
@@ -84,9 +83,11 @@ public class Songify {
             if (genreUserInput.equals(filterGenre.getgenre())) {
                 System.out.println("Song Title: " + filterGenre.getsongTitle() + " Artist Name: " + filterGenre.getartistName() +
                 " Stream Count: " + filterGenre.getstreamCount() + " Genre: " + filterGenre.getgenre()); 
-            } 
+            }
+        }   
+           System.out.println("There are no additional " + genreUserInput + " songs in the playlist");
+           System.out.println("To add new songs of the " + genreUserInput + " genre, Click 2");
         }
-    }
 
     // Brief: delete a song from the list of songs
     public void deleteSong() {
