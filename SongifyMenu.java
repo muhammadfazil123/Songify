@@ -31,7 +31,7 @@ public class SongifyMenu {
 
     public static void songifyMenu() {
 
-        System.out.println("Songify Menu:");
+        System.out.println("                Songify Menu:");
         System.out.println("Click 1 - to access the current Songify playlist");
         System.out.println("Click 2 - to add a new song to the Songify playlist");
         System.out.println("Click 3 - to remove an existing song from the playlist");

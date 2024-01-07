@@ -1,11 +1,13 @@
-import java.util.ArrayList;
-import java.util.Scanner;
-import java.util.Iterator;
+import java.util.ArrayList; //importing the ArrayList class
+import java.util.Scanner; //importing the Scanner class
+import java.util.Iterator; //importing the Iterator class
 
 public class Songify {
 
+    // using declaration of an ArrayList to store SongData objects
     private ArrayList<SongData> playlistSongs = new ArrayList<SongData>();
     
+    // using Songify constuctor to intialise and add information to the ArrayList
     public Songify() {
 
         playlistSongs.add(new SongData("Shippuden", "Blanco", 44000000, "Rap"));
@@ -22,29 +24,7 @@ public class Songify {
         playlistSongs.add(new SongData("Thang For You", "Rylo Rodrigeuz", 60000000 , "Hip Hop"));
     }
 
-    // Brief: Add a new song to the list of songs
-    public void addNewSongData() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("You have chosen to add a new song to the playlist");
-
-        System.out.println("What is the title of the song you would like to add?");
-        String songTitle = scanner.nextLine();
-
-        System.out.println("What is the artist's name?");
-        String artistName = scanner.nextLine();
-
-        System.out.println("What is the stream count of this song?");
-        int streamCount = scanner.nextInt();
-        scanner.nextLine();
-
-        System.out.println("What genre does this song belong to?");
-        String genre = scanner.nextLine();
-
-        playlistSongs.add(new SongData(songTitle, artistName, streamCount, genre));
-        System.out.println("Your song has sucessfully been added to the playlist!");
-        }
-
-    // Brief: Print a list of all the songs stored in the ArrayList
+    // creating a method to print a list of all the songs stored in the ArrayList
     public void printPlaylist() {
         System.out.println("The current Songify playlist is as follows:");
 
@@ -54,61 +34,100 @@ public class Songify {
         }
     }
 
-    // Brief: Print a list of songs over a given number of plays 
-    public void filterStreamCount(Scanner scanner) {
-        System.out.println("What is the lowest stream count that you would like to appear on the playlist?");
-        int streamCountUserInput = scanner.nextInt();
+    // creating a method to add a new song to the list of songs in the ArrayList
+    public void addNewSongData() {
+        Scanner scanner = new Scanner(System.in); // creating a Scanner object
+        System.out.println("You have chosen to add a new song to the Songify playlist");
 
-        System.out.println("Your playlist only includes songs with a higher stream count than " + streamCountUserInput + ":");
+        System.out.println("What is the title of the song you would like to add?");
+        String songTitleUserInput = scanner.nextLine(); // enables user input for the song title to be read
+
+        System.out.println("What is the artist's name?");
+        String artistNameUserInput = scanner.nextLine(); // enables user input for the artist name to be read
+
+        System.out.println("What is the stream count of this song?");
+        int streamCountUserInput = scanner.nextInt(); // enables user input for interger stream count to be read
+        scanner.nextLine(); //ensures user input can move to the next line
+
+        System.out.println("What genre does this song belong to?");
+        String genreUserInput = scanner.nextLine(); // enables user input for the genre to be read
+
+        playlistSongs.add(new SongData(songTitleUserInput, artistNameUserInput, streamCountUserInput, genreUserInput));
+        System.out.println("Your song has sucessfully been added to the playlist!");
+        printPlaylist(); // using the method to print and showcase the updated Songify playlist
+    }
+
+    // creating a method to delete a song from the list of songs in the ArrayList
+    public void deleteSong() {
+        Scanner scanner = new Scanner(System.in); // creating a Scanner object
+        // using the printPlaylist method to improve user experince as they can see what song they want to remove
+        printPlaylist();
+        
+        System.out.println("What is the title of the song you would like to delete?");
+        String deleteSongTitleInput = scanner.nextLine(); // enables user input for the song title that needs to be deleted to be read
+
+        System.out.println("What is the artist's name?");
+        String deleteArtistNameInput = scanner.nextLine(); // enables user input for the artist name that needs to be deleted to be read
+
+        // getting the Iterator
+        Iterator<SongData> iterator = playlistSongs.iterator();
+        
+        // using a while loop to get the Iterator to go through the ArrayList 
+        while(iterator.hasNext()) {
+            SongData songDataPosition = iterator.next();
+        
+        /* using an if statement to check wether the song titles & artist names are equal to 
+        the song title & artist name the user wants to delete
+        if the condition are true the code within the statement will execute */ 
+        
+            if (songDataPosition.getsongTitle().equals(deleteSongTitleInput) && songDataPosition.getartistName().equals(deleteArtistNameInput)) {
+                iterator.remove(); // the iterator will remove the song from the ArrayList
+                System.out.println( deleteSongTitleInput + " by " + deleteArtistNameInput + " has been deleted from the Songify playlist!");
+            }
+        }
+    }   
+
+    // creating a method to print a list of songs over a given number of plays 
+    public void filterStreamCount(Scanner scanner) {
+        
+        System.out.println("You have chosen to filter the Songify playlist to only include songs over a given number of streams");
+        System.out.println("What is the lowest stream count number that you would like to appear?");
+        int lowestStreamCountUserInput = scanner.nextInt(); // enables user input for the lowest stream count to be read
+
+        //concatentation used to vary print statement based on previous user input
+        System.out.println("Your playlist only includes songs with a higher stream count than " + lowestStreamCountUserInput + ":");
 
         for (SongData filterStreamCount : playlistSongs) {
-            if (streamCountUserInput <= filterStreamCount.getstreamCount()) {
+            if (lowestStreamCountUserInput <= filterStreamCount.getstreamCount()) {
                 System.out.println("Song Title: " + filterStreamCount.getsongTitle() + " Artist Name: " + filterStreamCount.getartistName() +
                 " Stream Count: " + filterStreamCount.getstreamCount() + " Genre: " + filterStreamCount.getgenre()); 
             } 
         }
     }
 
-    // Added Feature: Print a list of songs based on genre
+    /* Adding an extra feature by creating a method that allows the user to
+    filter the list of songs in the ArrayList based on the genre they input */
     public void filterGenre() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("You have chosen to print a list of songs based on genre");
+        Scanner scanner = new Scanner(System.in); // creating a Scanner object
 
-        System.out.println("What genre of songs would you like in your playlist?");
-        String genreUserInput = scanner.nextLine();
+        System.out.println("You have chosen to filter the Songify playlist based on genre");
 
-        System.out.println("Your playlist now includes songs that belong to the " + genreUserInput + " genre:");
+        System.out.println("What genre of songs would you like to filter to?");
+        String desiredGenreUserInput = scanner.nextLine(); // enables user input for the desired genre to be read
+
+        // concatentation used to vary print statement based on previous user input
+        System.out.println("Your playlist now includes songs that belong to the " + desiredGenreUserInput + " genre:");
 
         for(SongData filterGenre : playlistSongs) {
-            if (genreUserInput.equals(filterGenre.getgenre())) {
+            if (desiredGenreUserInput.equals(filterGenre.getgenre())) {
                 System.out.println("Song Title: " + filterGenre.getsongTitle() + " Artist Name: " + filterGenre.getartistName() +
                 " Stream Count: " + filterGenre.getstreamCount() + " Genre: " + filterGenre.getgenre()); 
             }
         }   
-           System.out.println("There are no additional " + genreUserInput + " songs in the playlist");
-           System.out.println("To add new songs of the " + genreUserInput + " genre, Click 2");
-        }
 
-    // Brief: delete a song from the list of songs
-    public void deleteSong() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("You have chosen to delete a song from the playlist");
-
-        System.out.println("What is the title of the song you would like to delete?");
-        String deleteSongTitle = scanner.nextLine();
-
-        System.out.println("What is the artist's name?");
-        String deleteArtistName = scanner.nextLine();
-
-        Iterator<SongData> iterator = playlistSongs.iterator();
-            
-        while(iterator.hasNext()) {
-            SongData songDataPosition = iterator.next();
-
-            if (songDataPosition.getsongTitle().equals(deleteSongTitle) && songDataPosition.getartistName().equals(deleteArtistName)) {
-                iterator.remove();
-                System.out.println( deleteSongTitle + " by " + deleteArtistName + " has been deleted from the playlist!");
-            }
-        }
+        // concatentation used to vary print statement based on previous user input
+        System.out.println("There are no additional " + desiredGenreUserInput + " songs in the playlist");        
+        // print statement allows better user experience as instructions are provided
+        System.out.println("To add new songs of the " + desiredGenreUserInput + " genre, Click 2");
     }
-}   
+ } 
