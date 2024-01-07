@@ -13,7 +13,7 @@ public class SongifyMenu {
     // main method added to ensure all code inside can be called on and run
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in); // creating a Scanner object
-        Songify useSongifyMethods = new Songify(); // instance of Songify class created so it's methods can be accessed
+        SongifyMethods useSongifyMethods = new SongifyMethods(); // instance of Songify class created so it's methods can be accessed
 
         System.out.println("Welcome to Songify, a streaming service perfect for you: ");
 
@@ -49,7 +49,7 @@ public class SongifyMenu {
 
     /* creating a method that provides a menu response based on user input 
     menu response has instances so that theY can be accesed */
-    public static void menuResponse(int numberUserSelected, Songify useSongifyMethods, Scanner scanner) {
+    public static void menuResponse(int numberUserSelected, SongifyMethods useSongifyMethods, Scanner scanner) {
 
         /* the switch statement provides a menu response based on the number the user selected on the Songify menu,
          the case is matched to the variable so it can be execeuted */

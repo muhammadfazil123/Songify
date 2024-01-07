@@ -2,13 +2,13 @@ import java.util.ArrayList; // importing the ArrayList class
 import java.util.Scanner; // importing the Scanner class
 import java.util.Iterator; //importing the Iterator class
 
-public class Songify {
+public class SongifyMethods {
 
     // using declaration of an ArrayList to store SongData objects naming the collection playlist songs
     private ArrayList<SongData> playlistSongs = new ArrayList<SongData>();
     
-    // using Songify constuctor to intialize and add information to the SongData objects in the ArrayList
-    public Songify() {
+    // using SongifyMethods constuctor to intialize and add information to the SongData objects in the ArrayList
+    public SongifyMethods() {
 
         playlistSongs.add(new SongData("Shippuden", "Blanco", 44000075, "Rap"));
         playlistSongs.add(new SongData("Outside", "D-Block Europe", 267052078 , "Rap"));
