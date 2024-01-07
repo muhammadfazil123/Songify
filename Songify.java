@@ -20,7 +20,6 @@ public class Songify {
         playlistSongs.add(new SongData("Umbrella", "Rihanna", 988000000, "Hip-Hop"));
         playlistSongs.add(new SongData("Only", "Nicki Minaj", 535000000, "Hip-Hop"));
         playlistSongs.add(new SongData("Thang For You", "Rylo Rodrigeuz", 60000000 , "Hip-Hop"));
-       
     }
 
     // Brief: Add a new song to the list of songs
@@ -111,7 +110,5 @@ public class Songify {
             }
 
         }
-    }
-    
-
+    } 
 }
