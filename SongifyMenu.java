@@ -13,7 +13,7 @@ public class SongifyMenu {
         Scanner scanner = new Scanner(System.in);
         Songify useSongifyMethods = new Songify();
 
-        System.out.println("Welcome to Songify, a streaming service perfect for you:");
+        System.out.println("Welcome to Songify, a streaming service perfect for you: ");
 
         int userChoice = 0;
 
@@ -61,7 +61,7 @@ public class SongifyMenu {
             break;
 
             case FILTER_GENRE:
-            useSongifyMethods.filterGenre(scanner);
+            useSongifyMethods.filterGenre();
             break;
 
             case CLOSE_APPLICATION:
@@ -71,7 +71,6 @@ public class SongifyMenu {
 
             default:
             System.out.println("Wrong Number, Look at the Songify Menu and attempt again!");
-
         }
     
 
