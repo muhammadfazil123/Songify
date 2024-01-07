@@ -1,7 +1,8 @@
-import java.util.Scanner;
+import java.util.Scanner; // importing the Scanner class
 
 public class SongifyMenu {
 
+    // constant varaibles that will be used for the Songify menu
     final static int PRINT_PLAYLIST = 1;
     final static int ADD_NEW_SONG = 2;
     final static int DELETE_SONG = 3;
@@ -9,29 +10,35 @@ public class SongifyMenu {
     final static int FILTER_BY_GENRE = 5;
     final static int CLOSE_APPLICATION = 9;
 
+    // main method added to ensure all code inside can be called on and run
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        Songify useSongifyMethods = new Songify();
+        Scanner scanner = new Scanner(System.in); // creating a Scanner object
+        Songify useSongifyMethods = new Songify(); // instance of Songify class created so it's methods can be accessed
 
         System.out.println("Welcome to Songify, a streaming service perfect for you: ");
 
-        int userChoice = 0;
+        // variable represents the number user seleted and sets it to 0
+        int numberUserSelected = 0;
 
-        while(userChoice != CLOSE_APPLICATION) {
-            songifyMenu();
-            userChoice = scanner.nextInt();
-
-            if(PRINT_PLAYLIST <= userChoice && CLOSE_APPLICATION >= userChoice) {
-                userInputMenuChoice(userChoice, useSongifyMethods, scanner);
+        // while loop executes as long as the condition is true, the code within the while loop will execute
+        while(numberUserSelected != CLOSE_APPLICATION) {
+            songifyTerminalMenu(); // calls on the method to print Songify menu 
+            numberUserSelected = scanner.nextInt(); // enables user input for the number chosen to be read
+            
+            /* if condition is true, the menuResponse method will be called on
+            else, the print statement will appear in the terminal */
+            if(PRINT_PLAYLIST <= numberUserSelected && CLOSE_APPLICATION >= numberUserSelected) {
+                menuResponse(numberUserSelected, useSongifyMethods, scanner);
             } else {
                 System.out.println("Wrong Number, Look at the Songify Menu and attempt again!");
             } 
         } 
     }
 
-    public static void songifyMenu() {
+    // creating a songify terminal menu to print statemnets that will instruct the user
+    public static void songifyTerminalMenu() {
 
-        System.out.println("                Songify Menu:");
+        System.out.println("                Songify Menu:"); // space added to have visual effect when executed
         System.out.println("Click 1 - to access the current Songify playlist");
         System.out.println("Click 2 - to add a new song to the Songify playlist");
         System.out.println("Click 3 - to remove an existing song from the playlist");
@@ -40,9 +47,13 @@ public class SongifyMenu {
         System.out.println("Click 9 - to close the Songify application");
     }
 
-    public static void userInputMenuChoice(int userChoice, Songify useSongifyMethods, Scanner scanner) {
+    /* creating a method that provides a menu response based on user input 
+    menu response has instances so that theY can be accesed */
+    public static void menuResponse(int numberUserSelected, Songify useSongifyMethods, Scanner scanner) {
 
-        switch(userChoice) {
+        /* the switch statement provides a menu response based on the number the user selected on the Songify menu,
+         the case is matched to the variable so it can be execeuted */
+        switch(numberUserSelected) {
             
             case PRINT_PLAYLIST:
             useSongifyMethods.printPlaylist();

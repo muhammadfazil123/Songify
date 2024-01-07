@@ -1,33 +1,34 @@
-import java.util.ArrayList; //importing the ArrayList class
-import java.util.Scanner; //importing the Scanner class
+import java.util.ArrayList; // importing the ArrayList class
+import java.util.Scanner; // importing the Scanner class
 import java.util.Iterator; //importing the Iterator class
 
 public class Songify {
 
-    // using declaration of an ArrayList to store SongData objects
+    // using declaration of an ArrayList to store SongData objects naming the collection playlist songs
     private ArrayList<SongData> playlistSongs = new ArrayList<SongData>();
     
-    // using Songify constuctor to intialise and add information to the ArrayList
+    // using Songify constuctor to intialize and add information to the SongData objects in the ArrayList
     public Songify() {
 
-        playlistSongs.add(new SongData("Shippuden", "Blanco", 44000000, "Rap"));
-        playlistSongs.add(new SongData("Outside", "D-Block Europe", 267000000 , "Rap"));
-        playlistSongs.add(new SongData("Alone With You", "Arz", 177000000, "Rap"));
-        playlistSongs.add(new SongData("Savage Anthem", "PARTYNEXTDOOR", 150000000 , "RNB"));
-        playlistSongs.add(new SongData("Who Hurt You?", "Daniel Caesar", 762000000, "RNB"));
-        playlistSongs.add(new SongData("No Guidance", "Chris Brown", 468000000, "RNB"));
+        playlistSongs.add(new SongData("Shippuden", "Blanco", 44000075, "Rap"));
+        playlistSongs.add(new SongData("Outside", "D-Block Europe", 267052078 , "Rap"));
+        playlistSongs.add(new SongData("Alone With You", "Arz", 177000452, "Rap"));
+        playlistSongs.add(new SongData("Savage Anthem", "PARTYNEXTDOOR", 159006500 , "RNB"));
+        playlistSongs.add(new SongData("Who Hurt You?", "Daniel Caesar", 762050069, "RNB"));
+        playlistSongs.add(new SongData("No Guidance", "Chris Brown", 468000099, "RNB"));
         playlistSongs.add(new SongData("On The Low", "Burna Boy", 365000000, "Afrobeats"));
-        playlistSongs.add(new SongData("Soundgasm", "Rema", 670000000 , "Afrobeats"));
-        playlistSongs.add(new SongData("Soso", "Omah Lay", 123000000, "Afrobeats"));
-        playlistSongs.add(new SongData("Umbrella", "Rihanna", 988000000, "Hip Hop"));
-        playlistSongs.add(new SongData("Only", "Nicki Minaj", 535000000, "Hip Hop"));
-        playlistSongs.add(new SongData("Thang For You", "Rylo Rodrigeuz", 60000000 , "Hip Hop"));
+        playlistSongs.add(new SongData("Soundgasm", "Rema", 670800000 , "Afrobeats"));
+        playlistSongs.add(new SongData("Soso", "Omah Lay", 123540000, "Afrobeats"));
+        playlistSongs.add(new SongData("Umbrella", "Rihanna", 988070220, "Hip Hop"));
+        playlistSongs.add(new SongData("Only", "Nicki Minaj", 535070980, "Hip Hop"));
+        playlistSongs.add(new SongData("Thang For You", "Rylo Rodrigeuz", 625000330 , "Hip Hop"));
     }
 
     // creating a method to print a list of all the songs stored in the ArrayList
     public void printPlaylist() {
         System.out.println("The current Songify playlist is as follows:");
-
+    
+    // using a for loop to go through the playlist songs and print the song data using get methods to access variables
         for (SongData printPlaylist: playlistSongs) {
             System.out.println("Song Title: " + printPlaylist.getsongTitle() + " Artist Name: " + printPlaylist.getartistName() +
             " Stream Count: " + printPlaylist.getstreamCount() + " Genre: " + printPlaylist.getgenre());
@@ -72,14 +73,11 @@ public class Songify {
         // getting the Iterator
         Iterator<SongData> iterator = playlistSongs.iterator();
         
-        // using a while loop to get the Iterator to go through the ArrayList 
+        // using a while loop to get the Iterator to go through the songs in the ArrayList 
         while(iterator.hasNext()) {
             SongData songDataPosition = iterator.next();
         
-        /* using an if statement to check wether the song titles & artist names are equal to 
-        the song title & artist name the user wants to delete
-        if the condition are true the code within the statement will execute */ 
-        
+        // if the if statement condition is true the code within the statement will execute 
             if (songDataPosition.getsongTitle().equals(deleteSongTitleInput) && songDataPosition.getartistName().equals(deleteArtistNameInput)) {
                 iterator.remove(); // the iterator will remove the song from the ArrayList
                 System.out.println( deleteSongTitleInput + " by " + deleteArtistNameInput + " has been deleted from the Songify playlist!");
@@ -97,7 +95,10 @@ public class Songify {
         //concatentation used to vary print statement based on previous user input
         System.out.println("Your playlist only includes songs with a higher stream count than " + lowestStreamCountUserInput + ":");
 
-        for (SongData filterStreamCount : playlistSongs) {
+        /* using a for loop to go over each of the SongData objects in the playlist songs ArrayList
+        then if the if statement condition is true,
+        the code within the statement will execute and print the song */ 
+         for (SongData filterStreamCount : playlistSongs) {
             if (lowestStreamCountUserInput <= filterStreamCount.getstreamCount()) {
                 System.out.println("Song Title: " + filterStreamCount.getsongTitle() + " Artist Name: " + filterStreamCount.getartistName() +
                 " Stream Count: " + filterStreamCount.getstreamCount() + " Genre: " + filterStreamCount.getgenre()); 
@@ -118,16 +119,18 @@ public class Songify {
         // concatentation used to vary print statement based on previous user input
         System.out.println("Your playlist now includes songs that belong to the " + desiredGenreUserInput + " genre:");
 
+        /* using a for loop to iterate over each of the SongData objects in the ArrayList
+        then if the if statement is true,
+        the code within the statement will execute and print the song */ 
         for(SongData filterGenre : playlistSongs) {
             if (desiredGenreUserInput.equals(filterGenre.getgenre())) {
                 System.out.println("Song Title: " + filterGenre.getsongTitle() + " Artist Name: " + filterGenre.getartistName() +
                 " Stream Count: " + filterGenre.getstreamCount() + " Genre: " + filterGenre.getgenre()); 
             }
         }   
-
         // concatentation used to vary print statement based on previous user input
         System.out.println("There are no additional " + desiredGenreUserInput + " songs in the playlist");        
         // print statement allows better user experience as instructions are provided
         System.out.println("To add new songs of the " + desiredGenreUserInput + " genre, Click 2");
     }
- } 
+} 
