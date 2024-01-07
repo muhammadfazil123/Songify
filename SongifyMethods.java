@@ -13,15 +13,15 @@ public class SongifyMethods {
         playlistSongs.add(new SongData("Shippuden", "Blanco", 44000075, "Rap"));
         playlistSongs.add(new SongData("Outside", "D-Block Europe", 267052078 , "Rap"));
         playlistSongs.add(new SongData("Alone With You", "Arz", 177000452, "Rap"));
-        playlistSongs.add(new SongData("Savage Anthem", "PARTYNEXTDOOR", 159006500 , "RNB"));
-        playlistSongs.add(new SongData("Who Hurt You?", "Daniel Caesar", 762050069, "RNB"));
-        playlistSongs.add(new SongData("No Guidance", "Chris Brown", 468000099, "RNB"));
+        playlistSongs.add(new SongData("Savage Anthem", "PARTYNEXTDOOR", 159006500 , "R&B"));
+        playlistSongs.add(new SongData("Who Hurt You?", "Daniel Caesar", 762050069, "R&B"));
+        playlistSongs.add(new SongData("No Guidance", "Chris Brown", 468000099, "R&B"));
         playlistSongs.add(new SongData("On The Low", "Burna Boy", 365000000, "Afrobeats"));
         playlistSongs.add(new SongData("Soundgasm", "Rema", 670800000 , "Afrobeats"));
         playlistSongs.add(new SongData("Soso", "Omah Lay", 123540000, "Afrobeats"));
-        playlistSongs.add(new SongData("Umbrella", "Rihanna", 988070220, "Hip Hop"));
-        playlistSongs.add(new SongData("Only", "Nicki Minaj", 535070980, "Hip Hop"));
-        playlistSongs.add(new SongData("Thang For You", "Rylo Rodrigeuz", 625000330 , "Hip Hop"));
+        playlistSongs.add(new SongData("Umbrella", "Rihanna", 988070220, "Hip-Hop"));
+        playlistSongs.add(new SongData("Only", "Nicki Minaj", 535070980, "Hip-Hop"));
+        playlistSongs.add(new SongData("Thang For You", "Rylo Rodrigeuz", 625000330 , "Hip-Hop"));
     }
 
     // creating a method to print a list of all the songs stored in the ArrayList
