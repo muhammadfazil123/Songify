@@ -25,8 +25,8 @@ public class SongifyMenu {
                 userInputMenuChoice(userChoice, useSongifyMethods, scanner);
             } else {
                 System.out.println("Wrong Number, Look at the Songify Menu and attempt again!");
-            }
-        }
+            } 
+        } 
     }
 
     public static void songifyMenu() {
@@ -72,8 +72,5 @@ public class SongifyMenu {
             default:
             System.out.println("Wrong Number, Look at the Songify Menu and attempt again!");
         }
-    
-
-    }
-    
+    } 
 }
