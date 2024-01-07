@@ -36,7 +36,7 @@ public class Songify {
         }
     }
 
-    // creating a method to add a new song to the list of songs in the ArrayList
+    // creating a method to add a new song to the list of SongaData objects in the ArrayList
     public void addNewSongData() {
         Scanner scanner = new Scanner(System.in); // creating a Scanner object
         System.out.println("You have chosen to add a new song to the Songify playlist");
@@ -56,7 +56,7 @@ public class Songify {
 
         playlistSongs.add(new SongData(songTitleUserInput, artistNameUserInput, streamCountUserInput, genreUserInput));
         System.out.println("Your song has sucessfully been added to the playlist!");
-        printPlaylist(); // using the method to print and showcase the updated Songify playlist
+        printPlaylist(); // calling the method to print and showcase the updated Songify playlist
     }
 
     // creating a method to delete a song from the list of songs in the ArrayList
