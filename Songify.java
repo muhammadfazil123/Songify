@@ -28,7 +28,8 @@ public class Songify {
     public void printPlaylist() {
         System.out.println("The current Songify playlist is as follows:");
     
-    // using a for loop to go through the playlist songs and print the song data using get methods to access variables
+    /* using a for loop to iterate over each of the SongData objects in the playlist songs ArrayList
+     and print the song data using get methods to access variables */
         for (SongData printPlaylist: playlistSongs) {
             System.out.println("Song Title: " + printPlaylist.getsongTitle() + ", Artist Name: " + printPlaylist.getartistName() +
             ", Stream Count: " + printPlaylist.getstreamCount() + ", Genre: " + printPlaylist.getgenre());
@@ -95,7 +96,7 @@ public class Songify {
         //concatentation used to vary print statement based on previous user input
         System.out.println("Your playlist only includes songs with a higher stream count than " + lowestStreamCountUserInput + ":");
 
-        /* using a for loop to go over each of the SongData objects in the playlist songs ArrayList
+        /* using a for loop to iterate over each of the SongData objects in the playlist songs ArrayList
         then if the if statement condition is true,
         the code within the statement will execute and print the song */ 
          for (SongData filterStreamCount : playlistSongs) {
