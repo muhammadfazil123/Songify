@@ -30,8 +30,8 @@ public class Songify {
     
     // using a for loop to go through the playlist songs and print the song data using get methods to access variables
         for (SongData printPlaylist: playlistSongs) {
-            System.out.println("Song Title: " + printPlaylist.getsongTitle() + " Artist Name: " + printPlaylist.getartistName() +
-            " Stream Count: " + printPlaylist.getstreamCount() + " Genre: " + printPlaylist.getgenre());
+            System.out.println("Song Title: " + printPlaylist.getsongTitle() + ", Artist Name: " + printPlaylist.getartistName() +
+            ", Stream Count: " + printPlaylist.getstreamCount() + ", Genre: " + printPlaylist.getgenre());
         }
     }
 
@@ -100,8 +100,8 @@ public class Songify {
         the code within the statement will execute and print the song */ 
          for (SongData filterStreamCount : playlistSongs) {
             if (lowestStreamCountUserInput <= filterStreamCount.getstreamCount()) {
-                System.out.println("Song Title: " + filterStreamCount.getsongTitle() + " Artist Name: " + filterStreamCount.getartistName() +
-                " Stream Count: " + filterStreamCount.getstreamCount() + " Genre: " + filterStreamCount.getgenre()); 
+                System.out.println("Song Title: " + filterStreamCount.getsongTitle() + ", Artist Name: " + filterStreamCount.getartistName() +
+                ", Stream Count: " + filterStreamCount.getstreamCount() + ", Genre: " + filterStreamCount.getgenre()); 
             } 
         }
     }
@@ -124,8 +124,8 @@ public class Songify {
         the code within the statement will execute and print the song */ 
         for(SongData filterGenre : playlistSongs) {
             if (desiredGenreUserInput.equals(filterGenre.getgenre())) {
-                System.out.println("Song Title: " + filterGenre.getsongTitle() + " Artist Name: " + filterGenre.getartistName() +
-                " Stream Count: " + filterGenre.getstreamCount() + " Genre: " + filterGenre.getgenre()); 
+                System.out.println("Song Title: " + filterGenre.getsongTitle() + ", Artist Name: " + filterGenre.getartistName() +
+                ", Stream Count: " + filterGenre.getstreamCount() + ", Genre: " + filterGenre.getgenre()); 
             }
         }   
         // concatentation used to vary print statement based on previous user input
