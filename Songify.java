@@ -113,7 +113,6 @@ public class Songify {
         Scanner scanner = new Scanner(System.in); // creating a Scanner object
 
         System.out.println("You have chosen to filter the Songify playlist based on genre");
-
         System.out.println("What genre of songs would you like to filter to?");
         String desiredGenreUserInput = scanner.nextLine(); // enables user input for the desired genre to be read
 
