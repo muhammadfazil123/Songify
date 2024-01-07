@@ -59,7 +59,7 @@ public class Songify {
         printPlaylist(); // calling the method to print and showcase the updated Songify playlist
     }
 
-    // creating a method to delete a song from the list of songs in the ArrayList
+    // creating a method to delete a song from the list of SongData objects in the ArrayList
     public void deleteSong() {
         Scanner scanner = new Scanner(System.in); // creating a Scanner object
         // using the printPlaylist method to improve user experince as they can see what song they want to remove
