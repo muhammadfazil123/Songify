@@ -6,7 +6,7 @@ public class SongData {
     private int streamCount;
     private String genre;
 
-    // using a parameterised constructor for intialization of SongData and the variables
+    // using a constructor with parameters to intialize SongData and the variables
     public SongData(String songTitle, String artistName, int streamCount, String genre) {
         this.songTitle = songTitle;
         this.artistName = artistName;
@@ -31,7 +31,7 @@ public class SongData {
         return genre; //using the get method to return the genre variable
     }
 
-    /* using a series of setter methods to set variables by assigning parameters
+    /* using a series of setter methods to set variables by assigning parameters 
     so they can be accessed as the variables in this class are private */  
     public void setsongTitle(String songTitle) {
         this.songTitle = songTitle; // Assigning the parameter to the variable song title using set method 
