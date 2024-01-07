@@ -32,12 +32,11 @@ public class Songify {
         System.out.println("What is the artist's name?");
         String artistName = scanner.nextLine();
 
-        System.out.println("What is the stream count of this song?");
-        int streamCount = scanner.nextInt();
-
         System.out.println("What genre does this song belong to?");
         String genre = scanner.nextLine();
-        scanner.close();
+
+        System.out.println("What is the stream count of this song?");
+        int streamCount = scanner.nextInt();
 
         playlistSongs.add(new SongData(songTitle, artistName, streamCount, genre));
 
@@ -78,14 +77,28 @@ public class Songify {
         System.out.println("What genre of songs would you like in your playlist?");
         String genreUserInput = scanner.nextLine();
 
-        System.out.println("Your playlist now includes song that belong to the " + genreUserInput + " genre:");
+        System.out.println("Your playlist now includes songs that belong to the " + genreUserInput + " genre:");
 
         for(SongData filterGenre : playlistSongs) {
             if (genreUserInput.equals(filterGenre.getgenre())) {
                 System.out.println("Song Title " + filterGenre.getsongTitle() + " Artist Name " + filterGenre.getartistName() +
-                " Stream Count: " + filterGenre.getstreamCount() + " Genre: " + filterGenre.getgenre());   
+                " Stream Count: " + filterGenre.getstreamCount() + " Genre: " + filterGenre.getgenre()); 
             } 
         }
+    }
+
+    public void filterArtistName(Scanner scanner) {
+        System.out.println("What Artist would you like to specfically search?");
+        String artistNameUserInput = scanner.nextLine();
+
+        System.out.println("Your playlist now only shows songs that belong to " + artistNameUserInput + " :");
+        for(SongData filterArtistName : playlistSongs) {
+            if (artistNameUserInput.equals(filterArtistName.getgenre())) {
+                System.out.println("Song Title " + filterArtistName.getsongTitle() + " Artist Name " + filterArtistName.getartistName() +
+                " Stream Count: " + filterArtistName.getstreamCount() + " Genre: " + filterArtistName.getgenre());   
+            } 
+        }
+
     }
 
     // Brief: delete a song from the list of songs
