@@ -108,7 +108,7 @@ public class Songify {
     }
 
     /* Adding an extra feature by creating a method that allows the user to
-    filter the list of SongData objects in the ArrayList based on the genre they input */
+    print the list of SongData objects in the ArrayList based on the genre the user inputs */
     public void filterGenre() {
         Scanner scanner = new Scanner(System.in); // creating a Scanner object
 
